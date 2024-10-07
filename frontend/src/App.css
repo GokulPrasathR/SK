@@ -1,10 +1,11 @@
 html,
 body {
   font-family: 'Amazon Ember';
-  width: 100%;
+  width: 101%;
   height: 100%;
   margin: 0px;
   padding: 0px;
+  background: url('C:/Users/Gokul Prasath/Downloads/realistic-scene-with-clothes-neighborhood-yard-sale.jpg');
   overflow-x: hidden;
 }
 
@@ -27,10 +28,11 @@ body {
 }
 
 nav {
+  
   width: 100%;
-  height: 580px !important;
-  background-image: url("E:\SKimage\nav.jpg");
-  background-size: cover;
+  height: 200px !important;
+  background-image: url("C:\Users\Gokul Prasath\Downloads\keith-misner-h0Vxgz5tyXA-unsplash.jpg");
+  background-size:cover;
   background-attachment:fixed;
   margin: 0;
   padding: 90;
@@ -72,6 +74,7 @@ nav {
 }
 
 /* Home page */
+
 #products_heading {
   margin-top: 1.8rem;
 }
@@ -172,6 +175,11 @@ footer {
   padding: 0.5rem 2rem;
 }
 
+#product_seller {
+  color: grey;
+  font-size: 0.9rem;
+}
+
 #stock_status {
   font-size: 1.1rem;
   font-weight: bold;
@@ -192,42 +200,32 @@ footer {
 
 /* Loader */
 .loader {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  aspect-ratio: 1.154;
-  position: relative;
-  background: conic-gradient(from 120deg at 50% 64%,#0000, #25b09b 1deg 120deg,#0000 121deg);
-  animation: l27-0 1.5s infinite cubic-bezier(0.3,1,0,1);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  width: 80px;
+  height: 80px;
+  padding-left: 0;
 }
-
-.loader:before,
 .loader:after {
-  content:'';
-  position: absolute;
-  inset:0;
-  background:inherit;
-  transform-origin: 50% 66%;
-  animation: l27-1 1.5s infinite;
+  content: ' ';
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fa9c23;
+  border-color: #fa9c23 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
 }
-
-.loader:after {
-  --s:-1;
-}
-
-@keyframes l27-0 {
-  0%,30%      {transform: rotate(0)}
-  70%         {transform: rotate(120deg)}
-  70.01%,100% {transform: rotate(360deg)}
-}
-
-@keyframes l27-1 {
-  0%      {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
-  30%,70% {transform: rotate(calc(var(--s,1)*120deg)) translate(calc(var(--s,1)*-5px),10px)}
-  100%    {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Cart */

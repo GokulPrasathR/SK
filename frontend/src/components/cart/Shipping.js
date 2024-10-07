@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Fragment, useState } from "react";
-import {countries} from 'countries-list'
 import { saveShippingInfo } from "../../slices/cartSlice";
 import { useNavigate } from "react-router-dom";
 import CheckoutSteps from "./CheckoutStep";
@@ -12,7 +11,6 @@ export const validateShipping = (shippingInfo, navigate) => {
         !shippingInfo.address||
         !shippingInfo.city||
         !shippingInfo.state|| 
-        !shippingInfo.country||
         !shippingInfo.phoneNo||
         !shippingInfo.postalCode
         ) {
@@ -29,15 +27,13 @@ export default function Shipping() {
     const [city, setCity] = useState(shippingInfo.city);
     const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
     const [postalCode, setPostalCode] = useState(shippingInfo.postalCode);
-    const [country, setCountry] = useState(shippingInfo.country);
     const [state, setState] = useState(shippingInfo.state);
-    const countryList =  Object.values(countries);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(saveShippingInfo({address, city, phoneNo, postalCode, country, state}))
+        dispatch(saveShippingInfo({address, city, phoneNo, postalCode, state}))
         navigate('/order/confirm')
     }
 
@@ -100,22 +96,6 @@ export default function Shipping() {
                                 />
                             </div>
 
-                            <div className="form-group">
-                                <label htmlFor="country_field">Country</label>
-                                <select
-                                    id="country_field"
-                                    className="form-control"
-                                    value={country}
-                                    onChange={(e) => setCountry(e.target.value)}
-                                    required
-                                >
-                                    {countryList.map((country, i) => (
-                                        <option key={i} value={country.name}>
-                                            {country.name}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
                             <div className="form-group">
                                 <label htmlFor="state_field">State</label>
                                 <input

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Search from './Search';
 import {useDispatch, useSelector} from 'react-redux';
-import {DropdownButton, Dropdown, Image} from 'react-bootstrap';
+import {Dropdown, Image} from 'react-bootstrap';
 import { logout } from '../../actions/userActions';
 
 
@@ -17,7 +17,7 @@ export default function Header () {
 
 
     return (
-    <nav className="navbar row">
+    <nav className="navbar row" >
         <div className="col-12 col-md-3">
           <div className="navbar-brand">
             <Link to="/">

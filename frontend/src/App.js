@@ -51,7 +51,7 @@ function App() {
   },[])
 
   return (
-    <Router>
+    <Router >
       <div className="App">
         <HelmetProvider>
             <Header/>

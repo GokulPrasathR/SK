@@ -1,7 +1,7 @@
 {
-  "name": "jvlcart",
+  "name": "sk",
   "version": "1.0.0",
-  "description": "ecommerce using MERN stack",
+  "description": "sktextiles using MERN stack",
   "main": "server.js",
   "scripts": {
     "start": "nodemon backend/server.js",
@@ -9,7 +9,7 @@
     "prod": "set NODE_ENV=production&&nodemon backend/server.js",
     "seeder": "node backend/utils/seeder.js"
   },
-  "author": "JV Logesh",
+  "author": "GPS",
   "license": "ISC",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
